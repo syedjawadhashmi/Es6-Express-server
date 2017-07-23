@@ -1,12 +1,12 @@
 
 import express from 'express';
-import dbConfig from './src/config/db';
+//import dbConfig from './src/config/db';
 import middlewaresConfig from './src/config/middlewares';
 
 const app = express();
 
 // database
-dbConfig();
+//dbConfig();
 
 // middleware
 middlewaresConfig(app);
