@@ -22,6 +22,6 @@ app.listen(PORT, err => {
   if (err) {
     console.log(err);
   } {
-    console.log(`App listen to port: ${PORT}`);
+    console.log(`App listen to port:`);
   }
 });
