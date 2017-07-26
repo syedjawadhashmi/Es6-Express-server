@@ -1,12 +1,14 @@
 
 import express from 'express';
-//import dbConfig from './src/config/db';
+import dbConfig from './src/config/db';
 import middlewaresConfig from './src/config/middlewares';
+
+import { MeetupRoutes } from './src/modules';
 
 const app = express();
 
 // database
-//dbConfig();
+dbConfig();
 
 // middleware
 middlewaresConfig(app);
@@ -14,7 +16,8 @@ middlewaresConfig(app);
 app.get('/', (req, res) => {
   res.send('Meetups API is Running');
 });
-//app.use('/api', [UserRoutes]);
+
+app.use('/api', [MeetupRoutes]);
 
 const PORT = process.env.PORT || 3000;
 
