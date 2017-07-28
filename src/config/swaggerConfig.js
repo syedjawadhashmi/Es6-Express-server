@@ -10,7 +10,7 @@ const swaggerDefinition = {
     version: '1.0.0',
     description: 'Demonstrating how to desribe a RESTful API with Swagger',
   },
-  host: 'localhost:3000',
+  host: 'https://es6-expres-server.herokuapp.com',
   basePath: '/',
 };
 
