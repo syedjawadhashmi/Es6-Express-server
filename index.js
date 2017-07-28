@@ -1,9 +1,10 @@
 
 import express from 'express';
-import dbConfig from './src/config/db';
+import dbConfig from './src/config/database';
 import middlewaresConfig from './src/config/middlewares';
 
-import { MeetupRoutes } from './src/modules';
+import swaggerSpec from './src/config/swaggerConfig';
+import { UserRoutes } from './src/routes';
 
 const app = express();
 
@@ -13,11 +14,16 @@ dbConfig();
 // middleware
 middlewaresConfig(app);
 
-app.get('/', (req, res) => {
-  res.send('Meetups API is Running');
-});
+// app.get('/', (req, res) => {
+//   res.send('Meetups API is Running');
+// });
+ app.use('/', UserRoutes);
 
-app.use('/api', [MeetupRoutes]);
+app.get('/swagger.json', function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(swaggerSpec);
+});
+//app.use('/api', [UserRoutes]);
 
 const PORT = process.env.PORT || 3000;
 
