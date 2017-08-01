@@ -5,86 +5,30 @@ const routes = new Router();
 
 
 /**
-  * @swagger
- * definitions:
+ * @swagger
+ * definition:
  *   User:
- *     title: User
- *     type: object
  *     properties:
- *       id:
- *         type: integer
- *         description: Unique identifier representing a specific user
- *       name:
+ *       title:
  *         type: string
- *         description: Name of the user
- *       createdAt:
+ *       description:
  *         type: string
- *         format: date-time
- *         description: User creation datetime
- *       updatedAt:
- *         type: string
- *         format: date-time
- *         description: User update datetime
- *   NewUser:
- *     title: NewUser
- *     type: object
- *     properties:
- *       name:
- *         type: string
- *         description: Name of the user
- *   Error:
- *     title: Error
- *     type: object
- *     properties:
- *       code:
- *         type: integer
- *         format: int32
- *       message:
- *         type: string
- *   ServerError:
- *     allOf:
- *       - $ref: '#/definitions/Error'
- *       - title: ServerError
- *   NotFoundError:
- *     allOf:
- *       - $ref: '#/definitions/Error'
- *       - title: NotFoundError
- *   ValidationError:
- *     allOf:
- *       - $ref: '#/definitions/Error'
- *       - title: ValidationError
- *       - properties:
- *           details:
- *             type: array
- *             items:
- *               title: FieldError
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                 param:
- *                   type: string
  */
 
 /**
  * @swagger
  * /api/users:
-   * /users:
-  *   get:
-  *     summary: List all users
-  *     description: Returns users
-  *     produces:
-  *       - application/json
-  *     tags:
-  *       - Users
-  *     responses:
-  *       200:
-  *         description: An array of users
-  *         schema:
-  *           title: Users
-  *           type: array
-  *           items:
-  *             $ref: '#/definitions/User'
+ *   get:
+ *     tags:
+ *       - Users
+ *     description: Returns all users
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: An array of users
+ *         schema:
+ *           $ref: '#/definitions/User'
  */
 
 routes.get('/api/users',  UserController.getAllUsers);
@@ -108,6 +52,5 @@ routes.get('/api/users',  UserController.getAllUsers);
  *       200:
  *         description: Successfully created
  */
-routes.post('/api/users',  UserController.createUser);
-
+routes.post('/api/users',  UserController.getAllUsers);
 export default routes;
