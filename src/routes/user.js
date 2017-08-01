@@ -52,5 +52,5 @@ routes.get('/api/users',  UserController.getAllUsers);
  *       200:
  *         description: Successfully created
  */
-routes.post('/api/users',  UserController.getAllUsers);
+routes.post('/api/users',  UserController.createUser);
 export default routes;
