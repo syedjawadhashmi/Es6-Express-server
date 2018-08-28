@@ -14,15 +14,15 @@ dbConfig();
 // middleware
 middlewaresConfig(app);
 
-// app.get('/', (req, res) => {
-//   res.send('Meetups API is Running');
-// });
- app.use('/', UserRoutes);
-
-app.get('/swagger.json', function(req, res) {
-  res.setHeader('Content-Type', 'application/json');
-  res.send(swaggerSpec);
+app.get('/', (req, res) => {
+  res.send('Meetups API is Running');
 });
+//  app.use('/', UserRoutes);
+
+// app.get('/swagger.json', function(req, res) {
+//   res.setHeader('Content-Type', 'application/json');
+//   res.send(swaggerSpec);
+// });
 //app.use('/api', [UserRoutes]);
 
 const PORT = process.env.PORT || 3000;
