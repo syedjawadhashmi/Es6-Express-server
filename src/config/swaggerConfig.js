@@ -2,7 +2,7 @@ import path from 'path';
 import swaggerJSDoc from 'swagger-jsdoc';
 
 /**
- * Swagger definition.
+ * Swagger definitions.
  */
 const swaggerDefinition = {
   info: {

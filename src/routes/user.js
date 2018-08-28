@@ -6,7 +6,7 @@ const routes = new Router();
 
 /**
  * @swagger
- * definition:
+ * definitions:
  *   User:
  *     properties:
  *       title:
